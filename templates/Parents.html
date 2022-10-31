@@ -1,0 +1,70 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body>
+<style>
+div {
+  background-image:  url({{ url_for('static', filename='parents.JPG') }});
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+</style>
+
+
+<div>
+<font face="arial" color="purple">
+<br></br>
+<center><h1>Fill or Edit Your Personal Information</h1>
+</center></font>
+<center><hr>
+
+<h2>Fill in your child's information </h2><br>
+<form method = "POST">
+<p><b>Name:</b>
+<input type="text" name = "name"  size="25" maxlength="25" required value ={{data[0]}}></p>
+<p><b>Age:</b>
+<input type="number" name = "age" size="5" maxlength="2" required value ={{data[1]}}></p>
+<p><b>Class:</b>
+<input type="number" name = "class" size="5" maxlength="2" required value ={{data[2]}}></p>
+    <p><b>Section:</b>
+<input type="text" name = "section" size="25" maxlength="25"  required value ={{data[3]}}></p>
+<p><b>Roll No.:</b>
+<input type="number" name = "roll" size="25" maxlength="25"  required value ={{data[4]}}></p>
+<p><b>Admission Number:</b>
+<input type="text" name = "adm" size="25" maxlength="25"  required value ={{data[5]}}></p>
+<p><b>Father's Name:</b>
+<input type="text" name = "fname" size="25" maxlength="25"  required value ={{data[6]}}></p>
+<p><b>Father's Occupation:</b>
+<input type="text" name = "focc" size="25" maxlength="25"  required value ={{data[7]}}></p>
+<p><b>Mother's Name:</b>
+<input type="text" name = "mname" size="25" maxlength="25" required value ={{data[8]}}></p>
+<p><b>Mother's Occupation:</b>
+<input type="text" name = "mocc" size="25" maxlength="25" required value ={{data[9]}}></p>
+<p><b>Address:</b>
+<input type="text" name = "addr" size="25" maxlength="25" required value ={{data[10]}}></p>
+
+
+
+<p><b>Phone Number:</b>
+<input type="text" size="25" maxlength="25" required value ={{data[11]}}></p>
+
+<p><b>Your Suggestions / Queries:</b><br><br><textarea cols="40" rows="5" name="suggest">Type here</textarea></p>
+
+       <img src = "{{ url_for('static', filename='plot.png') }}" <br> <br>
+
+
+     <h1> Gynacolegist Checkup </h1>
+      <h2> Known Health Problems </h2>
+    {{gyna[0]}} {{gyna[1]}} {{gyna[2]}}
+     <h2> Menstrual Health Problems </h2>
+     <label> Interval between two cycles </label>{{gyna[3]}}
+         <label>No. of days of flow</label>{{gyna[4]}}
+
+      <h2>Examination Finding</h2>
+            {{gyna[5]}} {{gyna[6]}}
+        <label>Doctor Remarks: </label>{{gyna[7]}}
+
+<p><input type="submit" value="Submit the details" disabled>     <input type="reset" value="Reset the form"></p><br>
+
+</p></form></center></div>
+</body></html>

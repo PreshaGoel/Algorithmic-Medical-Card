@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Ariel", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4{
+  position: relative;
+  opacity: 0.65;
+  background-position: center;
+  background-size: cover;
+background-attachment: fixed;
+
+
+}
+.bgimg-1 {
+  background-image:  url({{ url_for('static', filename='img1.JPG') }});
+  min-height: 100%;
+background-attachment: fixed;
+
+}
+
+.bgimg-2 {
+  background-image: url({{ url_for('static', filename='img2.JPG') }});
+  min-height: 400px;
+background-attachment: fixed;
+
+}
+
+.bgimg-3 {
+  background-image: url({{ url_for('static', filename='img3.JPG') }});
+  min-height: 400px;
+  background-attachment: fixed;
+}
+.bgimg-4 {
+  background-image:  url({{ url_for('static', filename='img4.JPG') }});
+  min-height: 100%;
+background-attachment: fixed;
+
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 4px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg-1">
+  <div class="caption">
+  <span class="border">The Medical Card</span>
+  </div>
+  </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;">
+  <h3 style="text-align:center;">The Medical Card</h3>
+  <p>
+The digitalised medical card we have generated is for grades(6-12th)
+This is a wholesome and efficient way for schools to enter student medical data and for parents to view it.
+This medical will include parameters like- ENT/ general , menstrual ,eyesight, dental and mental health.
+
+During checkups student will sit infront of a camera , this will cause the student’s profile to pop up. The profile will include information like Name, Class, Roll no., Blood type, underlining health conditions, Parents name , phone number and occupation.
+This can be viewed by the doctor and she can continue the checkup and fill up the respective form of the particular checkup.
+
+Then this information will be converted into pictorial form( i.e. graphs, pie charts)
+It will also contain remarks by the respective doctor.
+
+Parents can then go to the school websites portal and login to  access this information .
+
+This will help them to analyse and be updated of their wards’ health.
+Through these thorough reports parents can take necessary action
+Health is the topmost priority. 
+As it makes it possible for children  to devote more time and concentration towards studies, sports or other extra- curricular activities.</p>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+  <span class="border" style="background-color:transparent;text-align:center;font-size:25px;color:white;">Read More...</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;">
+  <p>This medical card enables the parent and the doctors to keep a check on the students health and identify deteriorating or improving health patterns.</p>
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption"> 
+  <span class="border" style="background-color:transparent;font-size:25px;color: white;">The Check Ups</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;">
+  <p>To signup, click on the links below. The information of the student can be filled by the doctor or the parent. </p>
+  </div>
+</div>
+
+<div class="bgimg-4">
+  <div class="caption">
+  <span class="border"><a href="/login">DOCTORS</a></span>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <span class="border"><a href="/login">PARENTS</a></span>
+  </div>
+</div>
+
+ <style>
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffa2b4;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #fdb2be;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style> 
+
+</body>
+</html>

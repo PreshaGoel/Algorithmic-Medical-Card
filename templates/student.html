@@ -1,0 +1,14 @@
+<b>Name:</b>{{ data[0][0] }}<br>
+<b>Age:</b> {{ data[0][1] }}<br>
+<b>Class:</b> {{ data[0][2] }}<br>
+<b>Section:</b> {{ data[0][3] }}<br>
+<b>Roll No.:</b> {{ data[0][4] }}<br>
+<b>Admission Number:</b> {{ data[0][5] }}<br>
+<b>Father's Name:</b> {{ data[0][6] }}<br>
+<b>Father's Occupation:</b> {{ data[0][7] }}<br>
+<b>Mother's Name:</b> {{ data[0][8] }}<br>
+<b>Mother's Occupation:</b> {{ data[0][9] }}<br>
+<b>Address:</b> {{ data[0][10] }}<br>
+<b>Phone Number:</b>
+<img src = "{{url_for( 'static', filename= 'plot.png')}}">
+<script>document.getElementById("name").value = "{{ data[0][0] }}"</script>

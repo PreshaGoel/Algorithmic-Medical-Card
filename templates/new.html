@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if showCamera %}
+    <h1>Live Video Feed</h1>
+    <img src ="{{ url_for('video_feed') }}">
+         <a href="{{url_for('showImage')}}">Captue Image</a>
+<button onclick ="{{url_for('showImage')}}">Capture Image</button>
+
+{% else %}
+     <h1>Capture Image</h1>
+    <img src ="{{ url_for('static', filename='image.jpg') }}">
+         <a href="{{url_for('index')}}">Live Camera</a>
+<button onclick ="{{url_for('index')}}">Live Camera</button>
+{% endif %}
+
+
+
+</body>
+</html>

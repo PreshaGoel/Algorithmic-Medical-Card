@@ -1,0 +1,118 @@
+<html>
+<head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<style>
+div {
+  background-image: url({{url_for( 'static', filename='doctors.png')}});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%; cover;
+  /*opacity : 65%*/
+
+
+
+}
+
+.
+
+</style>
+
+
+<div>
+<span style="font-family: arial; color: purple; ">
+<br></br>
+<div style="text-align: center;"><h1>Student's Information</h1>
+</div></span>
+<div style="text-align: center;" class="container">
+<hr {
+  color= "black";
+}>
+
+<h2>View The Students Personal Information </h2><br>
+    <select id="students">
+        {% for user in data %}
+            <option value="{{ user }}">{{ user }}</option>
+        {% endfor %}
+    </select>
+
+    <p id="main">
+    <b>Name:</b>
+    <b>Age:</b>
+    <b>Class:</b>
+    <b>Section:</b>
+    <b>Roll No.:</b>
+    <b>Admission Number:</b>
+    <b>Father's Name:</b>
+    <b>Father's Occupation:</b>
+    <b>Mother's Name:</b>
+    <b>Mother's Occupation:</b>
+    <b>Address:</b>
+    <b>Phone Number:</b></p>
+    <b>Resuts / Views:</b><br><br><textarea cols="40" rows="8" name="suggest">Type here</textarea> <br> <br> <br>
+
+    </div>
+
+
+     <div style="text-align: center;">
+
+    <form method="POST">
+    <label>Height</label><input type="text" name = "height">
+    <h1> Gynacolegist Checkup </h1>
+
+
+    <label> Name :</label> <input type = "text" name = "name" id="name">
+    <label>  Year : {{year}} </label>
+    <h2> Known Health Problems </h2>
+    <input type="checkbox" name = "headache", value="1"> <label>Headache</label>
+    <input type="hidden" name = "headache", value="0">
+    <input type="checkbox" name = "tiredness", value="1"> <label>Tiredness</label>
+    <input type="hidden" name = "tiredness", value="0">
+     <input type="checkbox" name = "dizziness", value="1"> <label>Dizziness on standing up from sitting </label>
+    <input type="hidden" name = "dizziness", value="0"> <br>
+
+
+         <h2> Menstrual Health Problems </h2>
+        <label> Interval between two cycles </label><input type="text" name = "interval">
+         <label>No. of days of flow</label><input type="text" name = "days">
+
+         <h2> Examination Findings</h2>
+        <input type="checkbox" name = "acne", value="1"> <label>Acne</label>
+    <input type="hidden" name = "acne", value="0">
+    <input type="checkbox" name = "facial", value="1"> <label>Facial Hair </label>
+    <input type="hidden" name = "facial", value="0"> <br>
+
+        <label> Doctor's Remark</label> <textarea name = "remark"></textarea><br> <br> <br>
+
+
+
+        <input type="submit" value="Submit">
+</form>
+
+
+
+
+</div>
+</div>
+
+</body>
+<script>
+    $("#students").change(function () {
+        var student = $(this).val();
+        //window.alert(student);
+        $.ajax({
+            url: "/students",
+            type: "get",
+            data: {data : student},
+            success: function (response){
+                $("#main").html(response)
+            },
+            error: function (xhr){
+                window.alert(xhr);
+            }
+        });
+    });
+</script>
+</html>
